@@ -61,9 +61,10 @@ dependencies {
 
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.graphics)
-    implementation(libs.compose.material3)
     implementation(libs.compose.activity)
+    implementation(libs.compose.material.motion.core)
     implementation(libs.compose.material.icons)
+    implementation(libs.compose.material3)
     implementation(libs.compose.navigation)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.core.ktx)
