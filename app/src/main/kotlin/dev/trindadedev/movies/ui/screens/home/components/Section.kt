@@ -42,7 +42,7 @@ private fun MoviesList(
     movies: List<Movie>
 ) {
     movies.forEach { movie ->
-        Row(
+        Column(
             Modifier
                 .fillMaxWidth()
                 .padding(8.dp)
@@ -56,17 +56,14 @@ private fun MoviesList(
                     .width(100.dp)
                     .height(100.dp)
             )
-            
-            Column {
-                Text(
-                    text = movie.name,
-                    style = MaterialTheme.typography.titleMedium
-                )
-                Text(
-                    text = movie.description,
-                    style = MaterialTheme.typography.bodyMedium
-                )
-            }
+            Text(
+                text = movie.name,
+                style = MaterialTheme.typography.titleMedium
+            )
+            Text(
+                text = movie.description,
+                style = MaterialTheme.typography.bodyMedium
+            )
         }
     }
 }
