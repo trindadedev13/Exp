@@ -18,6 +18,7 @@ import dev.trindadedev.movies.ui.screens.home.components.Section
 @Composable
 fun HomeScreen() {
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
+    val scrollState = rememberScrollState()
     
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
@@ -28,6 +29,7 @@ fun HomeScreen() {
         Column(
             Modifier
                 .padding(innerPadding)
+                .verticalScroll(scrollState)
         ) {
             Sections()
         }
