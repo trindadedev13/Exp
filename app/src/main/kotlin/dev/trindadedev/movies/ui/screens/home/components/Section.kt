@@ -26,7 +26,8 @@ fun Section(
     ){
         Text(
             text = label,
-            style = MaterialTheme.typography.titleLarge
+            style = MaterialTheme.typography.titleLarge,
+            modifier = Modifier.padding(8.dp)
         )
         Row(
             modifier = Modifier.horizontalScroll(hScrollState)
@@ -41,15 +42,19 @@ private fun MoviesList(
     movies: List<Movie>
 ) {
     movies.forEach { movie ->
-        Row(Modifier.fillMaxWidth()) {
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
+        ) {
             AsyncImage(
                 model = movie.image,
                 contentDescription = "Movie Image",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .clip(RoundedCornerShape(20.dp))
-                    .width(50.dp)
-                    .height(50.dp)
+                    .width(100.dp)
+                    .height(100.dp)
             )
             
             Column {
