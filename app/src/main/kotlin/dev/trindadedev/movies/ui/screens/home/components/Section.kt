@@ -9,7 +9,7 @@ import androidx.compose.ui.layout.*
 
 import coil.compose.AsyncImage
 
-import dev.trindadedev.mv.models.Movie
+import dev.trindadedev.movies.mv.models.Movie
 
 @Composable
 fun Section(
