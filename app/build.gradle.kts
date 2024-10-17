@@ -59,7 +59,11 @@ android {
 
 dependencies {
     implementation(platform(libs.compose.bom))
-
+    
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.core.splashscreen)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.graphics)
     implementation(libs.compose.activity)
@@ -67,8 +71,6 @@ dependencies {
     implementation(libs.compose.material.icons)
     implementation(libs.compose.material3)
     implementation(libs.compose.navigation)
-    implementation(libs.lifecycle.runtime.ktx)
-    implementation(libs.core.ktx)
-    implementation(libs.androidx.core.splashscreen)
     
+    implementation(libs.kotlinx.serialization.json)
 }

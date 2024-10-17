@@ -3,7 +3,6 @@ agp = "8.6.0"
 kotlin = "2.0.21"
 
 core-ktx = "1.13.1"
-lifecycle-runtime-ktx = "2.8.6"
 
 android-jvm = "17"
 android-compileSdk = "34"
@@ -11,6 +10,7 @@ android-targetSdk = "34"
 android-minSdk = "26"
 
 androidx-core-splashscreen = "1.0.1"
+androidx-lifecycle-runtime-ktx = "2.8.6"
 
 compose-bom = "2024.10.00"  
 compose-activity = "1.9.3"
@@ -18,7 +18,8 @@ compose-navigation = "2.8.3"
 compose-material-motion = "2.0.1"
 compose-material-icons = "1.7.4"
 compose-viewmodel = "2.8.6"
-compose-tabler-icons = "1.1.1"
+
+kotlin-serialization-json = "1.7.3"
 
 [plugins]
 # Android Gradle Plugin
@@ -46,11 +47,13 @@ compose-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-
 compose-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "compose-navigation" }
 compose-material-motion-core = { group = "io.github.fornewid", name = "material-motion-compose-core", version.ref = "compose-material-motion" }
 compose-material-icons = { module = "androidx.compose.material:material-icons-extended", version.ref = "compose-material-icons" }
-compose-tabler-icons = { group = "br.com.devsrsouza.compose.icons", name = "tabler-icons", version.ref = "compose-tabler-icons" }
 
-# Android X Core
+# AndroidX Core
 androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "androidx-core-splashscreen" }
-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core-ktx" }
 
-# KotlinX
-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
+# AndroidX KTX
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "androidx-lifecycle-runtime-ktx" }
+
+# JetBrains KTX
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlin-serialization-json" }
