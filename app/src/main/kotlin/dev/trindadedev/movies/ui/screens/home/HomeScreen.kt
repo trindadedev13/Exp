@@ -29,12 +29,27 @@ fun HomeScreen() {
                 .padding(innerPadding)
                 .verticalScroll(scrollState)
         ) {
-            Section(
-                "Latest",
-                getMovies(Type.LATEST)
-            )
+            Sections()
         }
     }
+}
+
+@Composable
+private fun Sections() {
+    Section(
+        label = Type.LATEST.toName,
+        movies = getMovies(Type.LATEST)
+    )
+    
+    Section(
+        label = Type.OLD.toName, 
+        movies = getMovies(Type.OLD)
+    )
+    
+    Section(
+        label = Type.CARTOON.toName,
+        movies = getMovies(Type.CARTOON)
+    )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)

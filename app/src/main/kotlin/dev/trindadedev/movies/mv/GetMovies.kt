@@ -6,7 +6,7 @@ fun getMovies(type: Type): List<Movie> {
     if (type == Type.LATEST) {
         return getLatestMovies()
     }
-    return emptyList()
+    return getLatestMovies()
 }
 
 private fun getLatestMovies(): List<Movie> {
