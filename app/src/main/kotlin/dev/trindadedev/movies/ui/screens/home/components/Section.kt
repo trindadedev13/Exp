@@ -19,18 +19,15 @@ fun Section(
     label: String,
     movies: List<Movie>
 ) {
-    val vScrollState = rememberScrollState()
-    val hScrollState = rememberScrollState()
-    Column(
-        modifier = Modifier.verticalScroll(vScrollState)
-    ){
+    val scrollState = rememberScrollState()
+    Column {
         Text(
             text = label,
             style = MaterialTheme.typography.titleLarge,
             modifier = Modifier.padding(8.dp)
         )
         Row(
-            modifier = Modifier.horizontalScroll(hScrollState)
+            modifier = Modifier.horizontalScroll(scrollState)
         ) {
             MoviesList(movies)
         }
