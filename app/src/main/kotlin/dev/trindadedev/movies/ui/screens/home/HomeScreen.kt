@@ -8,6 +8,7 @@ import androidx.compose.ui.res.*
 import dev.trindadedev.movies.Strings
 import dev.trindadedev.movies.mv.getMovies
 import dev.trindadedev.movies.mv.Type
+import dev.trindadedev.movies.ui.screens.home.components.Section
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
