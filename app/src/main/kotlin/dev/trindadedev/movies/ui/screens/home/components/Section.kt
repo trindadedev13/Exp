@@ -43,7 +43,6 @@ private fun MoviesList(
         Column(
             Modifier
                 .width(100.dp)
-                .height(100.dp)
                 .padding(8.dp)
         ) {
             AsyncImage(
@@ -52,18 +51,21 @@ private fun MoviesList(
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .clip(RoundedCornerShape(20.dp))
-                    .width(100.dp)
-                    .height(100.dp)
+                    .fillMaxWidth()
+                    .aspectRatio(1f)
             )
+            Spacer(modifier = Modifier.height(4.dp))
             Text(
                 text = movie.name,
                 style = MaterialTheme.typography.titleMedium,
-                //overflow = TextOverflow.Ellipsis
+                overflow = TextOverflow.Ellipsis,
+                maxLines = 1
             )
             Text(
                 text = movie.description,
                 style = MaterialTheme.typography.bodyMedium,
-                //overflow = TextOverflow.Ellipsis
+                overflow = TextOverflow.Ellipsis,
+                maxLines = 2 
             )
         }
     }
