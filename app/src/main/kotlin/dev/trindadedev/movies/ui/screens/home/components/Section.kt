@@ -58,12 +58,12 @@ private fun MoviesList(
             Text(
                 text = movie.name,
                 style = MaterialTheme.typography.titleMedium,
-                overflow = TextOverflow.Ellipsis
+                //overflow = TextOverflow.Ellipsis
             )
             Text(
                 text = movie.description,
                 style = MaterialTheme.typography.bodyMedium,
-                overflow = TextOverflow.Ellipsis
+                //overflow = TextOverflow.Ellipsis
             )
         }
     }
