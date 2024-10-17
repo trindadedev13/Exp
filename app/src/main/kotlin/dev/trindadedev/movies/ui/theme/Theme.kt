@@ -3,6 +3,7 @@ package dev.trindadedev.movies.ui.theme
 import android.app.Activity
 import android.os.Build
 
+import androidx.annotation.ChecksSdkIntAtLeast
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.dynamicDarkColorScheme
@@ -13,31 +14,47 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
+import androidx.compose.ui.graphics.Color
 
 @Composable
 fun MoviesAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
+    highContrastDarkTheme: Boolean = false,
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit,
 ) {
     val colorScheme =
         when {
-            dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
+            dynamicColor && supportsDynamicTheming() -> {
                 val context = LocalContext.current
-                if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
+                when {
+                    darkTheme && highContrastDarkTheme ->
+                        dynamicDarkColorScheme(context)
+                            .copy(background = Color.Black, surface = Color.Black)
+                    darkTheme -> dynamicDarkColorScheme(context)
+                    else -> dynamicLightColorScheme(context)
+                }
             }
 
+            darkTheme && highContrastDarkTheme ->
+                DarkColorScheme.copy(background = Color.Black, surface = Color.Black)
             darkTheme -> DarkColorScheme
             else -> LightColorScheme
         }
     val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {
-            val window = (view.context as Activity).window
-            window.statusBarColor = colorScheme.primary.toArgb()
-            WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
+            (view.context as Activity).apply {
+                WindowCompat.getInsetsController(window, window.decorView).apply {
+                    isAppearanceLightStatusBars = !darkTheme
+                    isAppearanceLightNavigationBars = !darkTheme
+                }
+            }
         }
     }
 
     MaterialTheme(colorScheme = colorScheme, typography = Typography, content = content)
 }
+
+@ChecksSdkIntAtLeast(api = Build.VERSION_CODES.S)
+fun supportsDynamicTheming() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
