@@ -42,7 +42,7 @@ private fun MoviesList(
     movies.forEach { movie ->
         Column(
             Modifier
-                .width(120.dp)
+                .width(140.dp)
                 .padding(8.dp)
         ) {
             AsyncImage(
@@ -52,7 +52,7 @@ private fun MoviesList(
                 modifier = Modifier
                     .clip(RoundedCornerShape(20.dp))
                     .fillMaxWidth()
-                    .height(140.dp)
+                    .height(200.dp)
             )
             Spacer(modifier = Modifier.height(4.dp))
             Text(
