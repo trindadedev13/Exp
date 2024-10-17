@@ -49,7 +49,7 @@ private fun MoviesList(
             Modifier
                 .width(140.dp)
                 .padding(8.dp)
-                .clip(RoundedCornerShape(20.dp))
+                .clip(RoundedCornerShape(12.dp))
                 .clickable { onMovieClicked(movie) }
         ) {
             AsyncImage(
@@ -66,13 +66,15 @@ private fun MoviesList(
                 text = movie.name,
                 style = MaterialTheme.typography.titleMedium,
                 overflow = TextOverflow.Ellipsis,
-                maxLines = 1
+                maxLines = 1,
+                modifier = Modifier.padding(start = 2.dp, end = 2.dp)
             )
             Text(
                 text = movie.description,
                 style = MaterialTheme.typography.bodyMedium,
                 overflow = TextOverflow.Ellipsis,
-                maxLines = 2 
+                maxLines = 2,
+                modifier = Modifier.padding(start = 2.dp, end = 2.dp)
             )
         }
     }
