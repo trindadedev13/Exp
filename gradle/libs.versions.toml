@@ -16,7 +16,7 @@ compose-bom = "2024.09.03"
 compose-activity = "1.9.2"
 compose-navigation = "2.8.2"
 compose-material-motion = "2.0.1"
-compose-material-icons = "1.7.3"
+compose-material-icons = "1.7.4"
 compose-viewmodel = "2.8.6"
 compose-tabler-icons = "1.1.1"
 
