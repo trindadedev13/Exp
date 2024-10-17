@@ -1,10 +1,13 @@
 package dev.trindadedev.movies.ui.screens.home.components
 
 import androidx.compose.foundation.*
+import androidx.compose.foundation.shape.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.*
+import androidx.compose.ui.unit.*
+import androidx.compose.ui.draw.*
 import androidx.compose.ui.layout.*
 
 import coil3.compose.AsyncImage
@@ -16,7 +19,7 @@ fun Section(
     label: String,
     movies: List<Movie>
 ) {
-    Column {
+    Row {
         Text(
             text = label,
             style = MaterialTheme.typography.titleLarge
@@ -34,7 +37,11 @@ private fun MoviesList(
             AsyncImage(
                 model = movie.image,
                 contentDescription = "Movie Image",
-                contentScale = ContentScale.Crop
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .clip(RoundedCornerShape(20.dp))
+                    .width(50.dp)
+                    .height(50.dp)
             )
             
             Column {
