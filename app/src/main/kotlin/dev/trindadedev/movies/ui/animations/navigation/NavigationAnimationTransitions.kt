@@ -17,34 +17,34 @@ package dev.trindadedev.movies.ui.animations.navigation
  *   along with Robok.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import soup.compose.material.motion.animation.materialSharedAxisXIn
-import soup.compose.material.motion.animation.materialSharedAxisXOut
+import soup.compose.material.motion.animation.materialSharedAxisZIn
+import soup.compose.material.motion.animation.materialSharedAxisZOut
 
 object NavigationAnimationTransitions {
 
     val enterTransition =
-        materialSharedAxisXIn(
+        materialSharedAxisZIn(
             forward = true,
             slideDistance = NavigationAnimationValues.SlideDistance,
             durationMillis = NavigationAnimationValues.SlideDuration,
         )
 
     val exitTransition =
-        materialSharedAxisXOut(
+        materialSharedAxisZOut(
             forward = true,
             slideDistance = NavigationAnimationValues.SlideDistance,
             durationMillis = NavigationAnimationValues.SlideDuration,
         )
 
     val popEnterTransition =
-        materialSharedAxisXIn(
+        materialSharedAxisZIn(
             forward = false,
             slideDistance = NavigationAnimationValues.SlideDistance,
             durationMillis = NavigationAnimationValues.SlideDuration,
         )
 
     val popExitTransition =
-        materialSharedAxisXOut(
+        materialSharedAxisZOut(
             forward = false,
             slideDistance = NavigationAnimationValues.SlideDistance,
             durationMillis = NavigationAnimationValues.SlideDuration,
