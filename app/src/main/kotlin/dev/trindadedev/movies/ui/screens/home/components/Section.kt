@@ -18,7 +18,8 @@ import dev.trindadedev.movies.mv.models.Movie
 @Composable
 fun Section(
     label: String,
-    movies: List<Movie>
+    movies: List<Movie>,
+    onMovieClicked: (Movie) -> Unit
 ) {
     val scrollState = rememberScrollState()
     Column {
@@ -30,20 +31,25 @@ fun Section(
         Row(
             modifier = Modifier.horizontalScroll(scrollState)
         ) {
-            MoviesList(movies)
+            MoviesList(
+                movies = movies,
+                onMovieClicked = { onMovieClicked(it) }
+            )
         }
     }
 }
 
 @Composable
 private fun MoviesList(
-    movies: List<Movie>
+    movies: List<Movie>,
+    onMovieClicked: (Movie) -> Unit
 ) {
     movies.forEach { movie ->
         Column(
             Modifier
                 .width(140.dp)
                 .padding(8.dp)
+                .clickable { onMovieClicked(movie) }
         ) {
             AsyncImage(
                 model = movie.image,

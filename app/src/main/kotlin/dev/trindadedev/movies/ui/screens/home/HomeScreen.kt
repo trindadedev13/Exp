@@ -12,6 +12,7 @@ import androidx.compose.ui.input.nestedscroll.*
 import dev.trindadedev.movies.Strings
 import dev.trindadedev.movies.mv.getMovies
 import dev.trindadedev.movies.mv.Type
+import dev.trindadedev.movies.mv.models.Movie
 import dev.trindadedev.movies.ui.screens.home.components.Section
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -31,26 +32,33 @@ fun HomeScreen() {
                 .padding(innerPadding)
                 .verticalScroll(scrollState)
         ) {
-            Sections()
+            Sections { movie ->
+                // when movie clicked
+            }
         }
     }
 }
 
 @Composable
-private fun Sections() {
+private fun Sections(
+    onMovieClicked: (Movie) -> Unit
+) {
     Section(
         label = Type.LATEST.toName,
-        movies = getMovies(Type.LATEST)
+        movies = getMovies(Type.LATEST),
+        onMovieClicked = { onMovieClicked(it) }
     )
     
     Section(
         label = Type.OLD.toName, 
-        movies = getMovies(Type.OLD)
+        movies = getMovies(Type.OLD),
+        onMovieClicked = { onMovieClicked(it) }
     )
     
     Section(
         label = Type.CARTOON.toName,
-        movies = getMovies(Type.CARTOON)
+        movies = getMovies(Type.CARTOON),
+        onMovieClicked = { onMovieClicked(it) }
     )
 }
 
