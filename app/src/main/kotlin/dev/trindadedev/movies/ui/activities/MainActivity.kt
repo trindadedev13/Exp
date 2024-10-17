@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 
+import dev.trindadedev.movies.navigation.MainNavHost
 import dev.trindadedev.movies.ui.theme.MoviesAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -26,7 +27,7 @@ class MainActivity : ComponentActivity() {
                      modifier = Modifier.fillMaxSize(),
                      color = MaterialTheme.colorScheme.background
                 ) {
-                    
+                    MainNavHost()
                 }
             }
         }

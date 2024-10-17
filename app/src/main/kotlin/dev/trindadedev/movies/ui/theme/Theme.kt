@@ -1,4 +1,4 @@
-package dev.trindadedev.visualcompose.ui.theme
+package dev.trindadedev.movies.ui.theme
 
 import android.app.Activity
 import android.os.Build
