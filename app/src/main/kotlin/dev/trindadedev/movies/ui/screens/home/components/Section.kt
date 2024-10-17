@@ -7,7 +7,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.*
 import androidx.compose.ui.layout.*
 
-import coil.compose.AsyncImage
+import coil3.compose.AsyncImage
 
 import dev.trindadedev.movies.mv.models.Movie
 
