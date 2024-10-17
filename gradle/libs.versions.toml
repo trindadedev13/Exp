@@ -21,10 +21,16 @@ compose-viewmodel = "2.8.6"
 compose-tabler-icons = "1.1.1"
 
 [plugins]
+# Android Gradle Plugin
 agp-library = { id = "com.android.library", version.ref = "agp" }
 agp-application = { id = "com.android.application", version.ref = "agp" }
+
+# Kotlin
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+
+# Compose
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
 [libraries]
