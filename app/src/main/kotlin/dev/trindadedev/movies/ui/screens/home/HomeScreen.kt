@@ -7,6 +7,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.*
 import androidx.compose.ui.res.*
 import androidx.compose.ui.layout.*
+import androidx.compose.ui.input.nestedscroll.*
 
 import dev.trindadedev.movies.Strings
 import dev.trindadedev.movies.mv.getMovies
@@ -17,9 +18,9 @@ import dev.trindadedev.movies.ui.screens.home.components.Section
 @Composable
 fun HomeScreen() {
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
-    val scrollState = rememberScrollState()
     
     Scaffold(
+        modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
             TopBar(scrollBehavior = scrollBehavior) 
         }
@@ -27,7 +28,6 @@ fun HomeScreen() {
         Column(
             Modifier
                 .padding(innerPadding)
-                .verticalScroll(scrollState)
         ) {
             Sections()
         }
