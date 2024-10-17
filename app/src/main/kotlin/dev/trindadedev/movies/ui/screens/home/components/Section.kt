@@ -53,7 +53,6 @@ private fun MoviesList(
                     .clip(RoundedCornerShape(20.dp))
                     .fillMaxWidth()
                     .height(120.dp)
-                    .aspectRatio(1f)
             )
             Spacer(modifier = Modifier.height(4.dp))
             Text(
