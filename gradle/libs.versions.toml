@@ -2,7 +2,6 @@
 agp = "8.6.0"
 kotlin = "2.0.21"
 
-core-ktx = "1.13.1"
 
 android-jvm = "17"
 android-compileSdk = "34"
@@ -10,6 +9,7 @@ android-targetSdk = "34"
 android-minSdk = "26"
 
 androidx-core-splashscreen = "1.0.1"
+androidx.core-ktx = "1.13.1"
 androidx-lifecycle-runtime-ktx = "2.8.6"
 
 compose-bom = "2024.10.00"  
