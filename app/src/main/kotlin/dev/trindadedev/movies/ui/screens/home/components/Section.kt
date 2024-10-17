@@ -9,6 +9,7 @@ import androidx.compose.ui.*
 import androidx.compose.ui.unit.*
 import androidx.compose.ui.draw.*
 import androidx.compose.ui.layout.*
+import androidx.compose.ui.text.style.*
 
 import coil3.compose.AsyncImage
 
@@ -41,7 +42,8 @@ private fun MoviesList(
     movies.forEach { movie ->
         Column(
             Modifier
-                .fillMaxWidth()
+                .width(100.dp)
+                .height(100.dp)
                 .padding(8.dp)
         ) {
             AsyncImage(
@@ -55,11 +57,13 @@ private fun MoviesList(
             )
             Text(
                 text = movie.name,
-                style = MaterialTheme.typography.titleMedium
+                style = MaterialTheme.typography.titleMedium,
+                overflow = TextOverflow.Ellipsis
             )
             Text(
                 text = movie.description,
-                style = MaterialTheme.typography.bodyMedium
+                style = MaterialTheme.typography.bodyMedium,
+                overflow = TextOverflow.Ellipsis
             )
         }
     }
