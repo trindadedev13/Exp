@@ -7,6 +7,7 @@ import androidx.navigation.toRoute
 
 import dev.trindadedev.movies.platform.LocalMainNavController
 import dev.trindadedev.movies.navigation.routes.HomeRoute
+import dev.trindadedev.movies.ui.screens.home.HomeScreen
 import dev.trindadedev.movies.ui.animations.navigation.NavigationAnimationTransitions
 
 import kotlin.reflect.typeOf
