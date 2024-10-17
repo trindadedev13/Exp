@@ -49,6 +49,7 @@ private fun MoviesList(
             Modifier
                 .width(140.dp)
                 .padding(8.dp)
+                .clip(RoundedCornerShape(20.dp))
                 .clickable { onMovieClicked(movie) }
         ) {
             AsyncImage(
