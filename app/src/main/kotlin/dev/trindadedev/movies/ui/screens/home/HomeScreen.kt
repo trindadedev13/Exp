@@ -6,18 +6,27 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.res.*
 
 import dev.trindadedev.movies.Strings
+import dev.trindadedev.movies.mv.getMovies
+import dev.trindadedev.movies.mv.Type
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen() {
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
-
+    
     Scaffold(
         topBar = {
             TopBar(scrollBehavior = scrollBehavior) 
         }
     ) { innerPadding ->
-        
+        Column(
+            Modifier.padding(innerPadding)
+        ) {
+            Section(
+                "Latest",
+                getMovies(Type.LATEST)
+            )
+        }
     }
 }
 

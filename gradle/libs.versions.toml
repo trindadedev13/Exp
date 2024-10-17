@@ -21,6 +21,8 @@ compose-viewmodel = "2.8.6"
 
 kotlin-serialization-json = "1.7.3"
 
+coil-kt = "3.0.0-rc01"
+
 [plugins]
 # Android Gradle Plugin
 agp-library = { id = "com.android.library", version.ref = "agp" }
@@ -46,7 +48,10 @@ compose-activity = { group = "androidx.activity", name = "activity-compose", ver
 compose-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "compose-viewmodel" }
 compose-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "compose-navigation" }
 compose-material-motion-core = { group = "io.github.fornewid", name = "material-motion-compose-core", version.ref = "compose-material-motion" }
-compose-material-icons = { module = "androidx.compose.material:material-icons-extended", version.ref = "compose-material-icons" }
+compose-material-icons = { group = "androidx.compose.material", name = "material-icons-extended", version.ref = "compose-material-icons" }
+compose-coil = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coil-kt" }
+
+coil-network-okhttp = { group = "io.coil-kt.coil3", name = "coil-network-okhttp", version.ref = "coil-kt" }
 
 # AndroidX Core
 androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "androidx-core-splashscreen" }
