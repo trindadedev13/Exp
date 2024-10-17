@@ -16,7 +16,7 @@ private fun getLatestMovies(): List<Movie> {
             name = "Aquiles Trindade, A História.",
             description= "The man's life story",
             image = "https://github.com/trindadedev13.png",
-            categoryName = Type.LATEST.name,
+            categoryName = Type.LATEST.toName,
             url = "bruh"
         ),
         Movie(
@@ -24,7 +24,7 @@ private fun getLatestMovies(): List<Movie> {
             name = "Aquiles Trindade, A História.",
             description= "The man's life story",
             image = "https://github.com/trindadedev13.png",
-            categoryName = Type.LATEST.name,
+            categoryName = Type.LATEST.toName,
             url = "bruh"
         ),
         Movie(
@@ -32,7 +32,7 @@ private fun getLatestMovies(): List<Movie> {
             name = "Aquiles Trindade, A História.",
             description= "The man's life story",
             image = "https://github.com/trindadedev13.png",
-            categoryName = Type.LATEST.name,
+            categoryName = Type.LATEST.toName,
             url = "bruh"
         )
     )
