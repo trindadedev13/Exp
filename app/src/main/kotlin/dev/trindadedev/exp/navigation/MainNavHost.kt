@@ -37,7 +37,11 @@ fun MainNavHost() {
         }
     ) {
         composable<HomeRoute> {
-            HomeScreen()
+            HomeScreen(
+                onProjectClicked = { project ->
+                    navController.navigate(ProjectDetailsRoute(project))
+                }
+            )
         }
         
         composable<ProjectDetailsRoute>(

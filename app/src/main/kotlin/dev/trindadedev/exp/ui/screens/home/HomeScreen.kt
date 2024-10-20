@@ -18,7 +18,9 @@ import dev.trindadedev.exp.ui.components.TopBar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    onProjectClicked: (Project) -> Unit
+) {
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
     val scrollState = rememberScrollState()
     
@@ -38,9 +40,7 @@ fun HomeScreen() {
                 .padding(innerPadding)
                 .verticalScroll(scrollState)
         ) {
-            Sections { project ->
-                // when project clicked
-            }
+            Sections { onProjectClicked(it) }
         }
     }
 }
