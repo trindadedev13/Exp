@@ -29,13 +29,6 @@ android {
     kotlinOptions {
         jvmTarget = libs.versions.android.jvm.get()
     }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
-    }
     
     buildFeatures {
         compose = true
@@ -48,11 +41,26 @@ android {
     }
     
     signingConfigs {
+        create("release") {
+            // temporary keystore
+            storeFile = file(layout.buildDirectory.dir("../release_key.jks"))
+            storePassword = "release_temp"
+            keyAlias = "release_temp"
+            keyPassword = "release_temp"
+        }
         getByName("debug") {
             storeFile = file(layout.buildDirectory.dir("../testkey.keystore"))
             storePassword = "testkey"
             keyAlias = "testkey"
             keyPassword = "testkey"
+        }
+    }
+    
+    buildTypes {
+        release {
+            isMinifyEnabled = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            signingConfig = signingConfigs.getByName("release")
         }
     }
 }
