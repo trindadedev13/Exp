@@ -9,6 +9,7 @@ import dev.trindadedev.exp.platform.LocalMainNavController
 import dev.trindadedev.exp.navigation.routes.HomeRoute
 import dev.trindadedev.exp.navigation.routes.ProjectDetailsRoute
 import dev.trindadedev.exp.navigation.navtype.CustomNavType
+import dev.trindadedev.exp.api.models.Project
 import dev.trindadedev.exp.ui.screens.home.HomeScreen
 import dev.trindadedev.exp.ui.screens.project.details.ProjectDetailsScreen
 import dev.trindadedev.exp.ui.animations.navigation.NavigationAnimationTransitions
