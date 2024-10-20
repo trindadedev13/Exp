@@ -1,4 +1,4 @@
-package dev.trindadedev.movies.ui.screens.home.components
+package dev.trindadedev.exp.ui.screens.home.components
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.shape.*
@@ -13,7 +13,7 @@ import androidx.compose.ui.text.style.*
 
 import coil3.compose.AsyncImage
 
-import dev.trindadedev.movies.mv.models.Movie
+import dev.trindadedev.exp.mv.models.Movie
 
 @Composable
 fun Section(

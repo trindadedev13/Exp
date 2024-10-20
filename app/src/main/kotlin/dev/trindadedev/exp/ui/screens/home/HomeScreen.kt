@@ -1,4 +1,4 @@
-package dev.trindadedev.movies.ui.screens.home
+package dev.trindadedev.exp.ui.screens.home
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -9,11 +9,11 @@ import androidx.compose.ui.res.*
 import androidx.compose.ui.layout.*
 import androidx.compose.ui.input.nestedscroll.*
 
-import dev.trindadedev.movies.Strings
-import dev.trindadedev.movies.mv.getMovies
-import dev.trindadedev.movies.mv.Type
-import dev.trindadedev.movies.mv.models.Movie
-import dev.trindadedev.movies.ui.screens.home.components.Section
+import dev.trindadedev.exp.Strings
+import dev.trindadedev.exp.mv.getMovies
+import dev.trindadedev.exp.mv.Type
+import dev.trindadedev.exp.mv.models.Movie
+import dev.trindadedev.exp.ui.screens.home.components.Section
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

@@ -1,4 +1,4 @@
-package dev.trindadedev.movies.ui.activities
+package dev.trindadedev.exp.ui.activities
 
 import android.os.Bundle
 
@@ -14,9 +14,9 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.navigation.compose.rememberNavController
 import androidx.compose.ui.Modifier
 
-import dev.trindadedev.movies.navigation.MainNavHost
-import dev.trindadedev.movies.ui.theme.MoviesAppTheme
-import dev.trindadedev.movies.platform.LocalMainNavController
+import dev.trindadedev.exp.navigation.MainNavHost
+import dev.trindadedev.exp.ui.theme.MoviesAppTheme
+import dev.trindadedev.exp.platform.LocalMainNavController
 
 class MainActivity : ComponentActivity() {
 

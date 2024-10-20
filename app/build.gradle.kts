@@ -6,13 +6,13 @@ plugins {
 }
 
 android {
-    namespace = "dev.trindadedev.movies"
+    namespace = "dev.trindadedev.exp"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        applicationId = "dev.trindadedev.movies"
+        applicationId = "dev.trindadedev.exp"
         versionCode = 1
         versionName = "1.0"
         

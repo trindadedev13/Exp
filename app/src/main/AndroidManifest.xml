@@ -13,7 +13,7 @@
         android:supportsRtl="true" 
         android:theme="@style/AppTheme">
         <activity 
-            android:name="dev.trindadedev.movies.ui.activities.MainActivity" 
+            android:name="dev.trindadedev.exp.ui.activities.MainActivity" 
             android:exported="true">
             <intent-filter>
                 <action 

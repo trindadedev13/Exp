@@ -1,4 +1,4 @@
-package dev.trindadedev.movies.ui.theme
+package dev.trindadedev.exp.ui.theme
 
 import android.app.Activity
 import android.os.Build
