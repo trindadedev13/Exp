@@ -7,6 +7,7 @@ import androidx.navigation.toRoute
 
 import dev.trindadedev.exp.platform.LocalMainNavController
 import dev.trindadedev.exp.navigation.routes.HomeRoute
+import dev.trindadedev.exp.navigation.routes.ProjectDetailsRoute
 import dev.trindadedev.exp.navigation.navtype.CustomNavType
 import dev.trindadedev.exp.ui.screens.home.HomeScreen
 import dev.trindadedev.exp.ui.screens.project.details.ProjectDetailsScreen
@@ -44,7 +45,7 @@ fun MainNavHost() {
             )
         ) {
             val args = it.toRoute<ProjectDetailsRoute>()
-            ProjectDetailsRoute(
+            ProjectDetailsScreen(
                 project = args.project
             )
         }
