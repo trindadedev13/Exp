@@ -22,6 +22,8 @@ compose-viewmodel = "2.8.6"
 kotlin-serialization-json = "1.7.3"
 
 coil-kt = "3.0.0-rc01"
+ktor = "2.3.0"
+koin = "4.0.0"
 
 [plugins]
 # Android Gradle Plugin
@@ -62,13 +64,12 @@ androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecyc
 
 # JetBrains KTX
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlin-serialization-json" }
-[libraries]
-ktor-client-core = { module = "io.ktor:ktor-client-core", version = "2.3.0" }
 
 # Ktor
-ktor-client-cio = { module = "io.ktor:ktor-client-cio", version = "2.3.0" }
-ktor-client-serialization = { module = "io.ktor:ktor-client-serialization", version = "2.3.0" }
-ktor-client-serialization-kotlinx-json = { module = "io.ktor:ktor-client-serialization-kotlinx-json", version = "2.3.0" }
+ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "koin" }
+ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio", version.ref = "ktor" }
+ktor-client-serialization = { group = "io.ktor", name = "ktor-client-serialization", version.ref= "ktor" }
+ktor-client-serialization-kotlinx-json = { group = "io.ktor", name = "ktor-client-serialization-kotlinx-json", version.ref = "ktor" }
 
 # Koin
 koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin"}
