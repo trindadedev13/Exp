@@ -1,4 +1,4 @@
-package dev.trindadedev.movies.platform
+package dev.trindadedev.exp.platform
 
 /*
  * This file is part of Robok © 2024.

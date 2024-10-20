@@ -1,4 +1,4 @@
-package dev.trindadedev.movies.navigation.routes
+package dev.trindadedev.exp.navigation.routes
 
 import kotlinx.serialization.Serializable
 

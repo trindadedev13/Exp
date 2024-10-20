@@ -1,14 +1,14 @@
-package dev.trindadedev.movies.navigation
+package dev.trindadedev.exp.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
 
-import dev.trindadedev.movies.platform.LocalMainNavController
-import dev.trindadedev.movies.navigation.routes.HomeRoute
-import dev.trindadedev.movies.ui.screens.home.HomeScreen
-import dev.trindadedev.movies.ui.animations.navigation.NavigationAnimationTransitions
+import dev.trindadedev.exp.platform.LocalMainNavController
+import dev.trindadedev.exp.navigation.routes.HomeRoute
+import dev.trindadedev.exp.ui.screens.home.HomeScreen
+import dev.trindadedev.exp.ui.animations.navigation.NavigationAnimationTransitions
 
 import kotlin.reflect.typeOf
 

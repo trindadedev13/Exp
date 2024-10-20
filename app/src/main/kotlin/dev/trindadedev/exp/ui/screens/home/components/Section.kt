@@ -13,7 +13,7 @@ import androidx.compose.ui.text.style.*
 
 import coil3.compose.AsyncImage
 
-import dev.trindadedev.exp.mv.models.Project
+import dev.trindadedev.exp.api.models.Project
 
 @Composable
 fun Section(
