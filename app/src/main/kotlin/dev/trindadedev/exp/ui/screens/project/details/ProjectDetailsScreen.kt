@@ -15,8 +15,8 @@ import dev.trindadedev.exp.ui.components.TopBar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DetailsScreen(
-    movie: Project
+fun ProjectDetailsScreen(
+    project: Project
 ) {
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
     val scrollState = rememberScrollState()
@@ -26,7 +26,7 @@ fun DetailsScreen(
         topBar = {
             TopBar(
                 title = {
-                    Text(stringResource(id = Strings.label_details))
+                    Text(stringResource(id = Strings.label_project_details))
                 },
                 scrollBehavior = scrollBehavior
             ) 
