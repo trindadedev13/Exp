@@ -35,5 +35,16 @@ fun MainNavHost() {
         composable<HomeRoute> {
             HomeScreen()
         }
+        
+        composable<ProjectDetailsRoute>(
+            typeMap = mapOf(
+                typeOf<Project>() to CustomNavType.ProjectType
+            )
+        ) {
+            val args = it.toRoute<ProjectDetailsRoute>()
+            ProjectDetailsRoute(
+                project = args.project
+            )
+        }
     }
 }

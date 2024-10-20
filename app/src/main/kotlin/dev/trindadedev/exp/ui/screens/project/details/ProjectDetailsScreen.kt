@@ -1,4 +1,4 @@
-package dev.trindadedev.exp.ui.screens.home
+package dev.trindadedev.exp.ui.screens.project.details
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -10,15 +10,14 @@ import androidx.compose.ui.layout.*
 import androidx.compose.ui.input.nestedscroll.*
 
 import dev.trindadedev.exp.Strings
-import dev.trindadedev.exp.api.getProjects
-import dev.trindadedev.exp.api.Type
 import dev.trindadedev.exp.api.models.Project
-import dev.trindadedev.exp.ui.screens.home.components.Section
 import dev.trindadedev.exp.ui.components.TopBar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen() {
+fun DetailsScreen(
+    movie: Project
+) {
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
     val scrollState = rememberScrollState()
     
@@ -27,7 +26,7 @@ fun HomeScreen() {
         topBar = {
             TopBar(
                 title = {
-                    Text(stringResource(id = Strings.app_name))
+                    Text(stringResource(id = Strings.label_details))
                 },
                 scrollBehavior = scrollBehavior
             ) 
@@ -38,32 +37,7 @@ fun HomeScreen() {
                 .padding(innerPadding)
                 .verticalScroll(scrollState)
         ) {
-            Sections { project ->
-                // when project clicked
-            }
+            
         }
     }
-}
-
-@Composable
-private fun Sections(
-    onProjectClicked: (Project) -> Unit
-) {
-    Section(
-        label = Type.EDITORS_CHOICE.toName, 
-        projects = getProjects(Type.EDITORS_CHOICE),
-        onProjectClicked = { onProjectClicked(it) }
-    )
-
-    Section(
-        label = Type.RECENT.toName,
-        projects = getProjects(Type.RECENT),
-        onProjectClicked = { onProjectClicked(it) }
-    )
-    
-    Section(
-        label = Type.MOST_DOWNLOADED.toName,
-        projects = getProjects(Type.MOST_DOWNLOADED),
-        onProjectClicked = { onProjectClicked(it) }
-    )
 }
