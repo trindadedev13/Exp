@@ -19,6 +19,9 @@ android {
         vectorDrawables { 
             useSupportLibrary = true
         }
+        
+        buildConfigField("String", "SKETCHUB_API_KEY", "\"${System.getenv("SKETCHUB_API_KEY") ?: ""}\"")
+        
     }
     
     compileOptions {
