@@ -22,7 +22,7 @@ compose-viewmodel = "2.8.6"
 kotlin-serialization-json = "1.7.3"
 
 coil-kt = "3.0.0-rc01"
-ktor = "2.3.0"
+ktor = "2.3.12"
 koin = "4.0.0"
 
 [plugins]
