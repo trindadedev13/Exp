@@ -88,4 +88,11 @@ dependencies {
     implementation(libs.coil.network.okhttp)
     
     implementation(libs.kotlinx.serialization.json)
+    
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.cio)
+    implementation(libs.ktor.client.serialization)
+    implementation(libs.ktor.client.serialization.kotlinx.json)
+    
+    implementation(libs.koin.android)
 }
