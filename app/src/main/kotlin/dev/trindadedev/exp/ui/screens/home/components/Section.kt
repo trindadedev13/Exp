@@ -13,13 +13,13 @@ import androidx.compose.ui.text.style.*
 
 import coil3.compose.AsyncImage
 
-import dev.trindadedev.exp.mv.models.Movie
+import dev.trindadedev.exp.mv.models.Project
 
 @Composable
 fun Section(
     label: String,
-    movies: List<Movie>,
-    onMovieClicked: (Movie) -> Unit
+    projects: List<Project>,
+    onProjectClicked: (Project) -> Unit
 ) {
     val scrollState = rememberScrollState()
     Column {
@@ -31,30 +31,30 @@ fun Section(
         Row(
             modifier = Modifier.horizontalScroll(scrollState)
         ) {
-            MoviesList(
-                movies = movies,
-                onMovieClicked = { onMovieClicked(it) }
+            ProjectsList(
+                projects = projects,
+                onProjectClicked = { onProjectClicked(it) }
             )
         }
     }
 }
 
 @Composable
-private fun MoviesList(
-    movies: List<Movie>,
-    onMovieClicked: (Movie) -> Unit
+private fun ProjectsList(
+    projects: List<Project>,
+    onProjectClicked: (Project) -> Unit
 ) {
-    movies.forEach { movie ->
+    projects.forEach { project ->
         Column(
             Modifier
                 .width(140.dp)
                 .padding(8.dp)
                 .clip(RoundedCornerShape(12.dp))
-                .clickable { onMovieClicked(movie) }
+                .clickable { onProjectClicked(project) }
         ) {
             AsyncImage(
-                model = movie.image,
-                contentDescription = "Movie Image",
+                model = project.image,
+                contentDescription = "Project Image",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .clip(RoundedCornerShape(20.dp))
@@ -63,14 +63,14 @@ private fun MoviesList(
             )
             Spacer(modifier = Modifier.height(4.dp))
             Text(
-                text = movie.name,
+                text = project.name,
                 style = MaterialTheme.typography.titleMedium,
                 overflow = TextOverflow.Ellipsis,
                 maxLines = 1,
                 modifier = Modifier.padding(start = 2.dp, end = 2.dp)
             )
             Text(
-                text = movie.description,
+                text = project.description,
                 style = MaterialTheme.typography.bodyMedium,
                 overflow = TextOverflow.Ellipsis,
                 maxLines = 2,

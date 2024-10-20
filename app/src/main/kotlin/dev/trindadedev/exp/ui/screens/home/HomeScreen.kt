@@ -10,9 +10,9 @@ import androidx.compose.ui.layout.*
 import androidx.compose.ui.input.nestedscroll.*
 
 import dev.trindadedev.exp.Strings
-import dev.trindadedev.exp.mv.getMovies
-import dev.trindadedev.exp.mv.Type
-import dev.trindadedev.exp.mv.models.Movie
+import dev.trindadedev.exp.api.getProjects
+import dev.trindadedev.exp.api.Type
+import dev.trindadedev.exp.api.models.Project
 import dev.trindadedev.exp.ui.screens.home.components.Section
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -32,8 +32,8 @@ fun HomeScreen() {
                 .padding(innerPadding)
                 .verticalScroll(scrollState)
         ) {
-            Sections { movie ->
-                // when movie clicked
+            Sections { project ->
+                // when project clicked
             }
         }
     }
@@ -41,24 +41,24 @@ fun HomeScreen() {
 
 @Composable
 private fun Sections(
-    onMovieClicked: (Movie) -> Unit
+    onProjectClicked: (Project) -> Unit
 ) {
     Section(
-        label = Type.LATEST.toName,
-        movies = getMovies(Type.LATEST),
-        onMovieClicked = { onMovieClicked(it) }
+        label = Type.EDITORS_CHOICE.toName, 
+        projects = getProjects(Type.EDITORS_CHOICE),
+        onProjectClicked = { onProjectClicked(it) }
+    )
+
+    Section(
+        label = Type.RECENT.toName,
+        projects = getProjects(Type.RECENT),
+        onProjectClicked = { onProjectClicked(it) }
     )
     
     Section(
-        label = Type.OLD.toName, 
-        movies = getMovies(Type.OLD),
-        onMovieClicked = { onMovieClicked(it) }
-    )
-    
-    Section(
-        label = Type.CARTOON.toName,
-        movies = getMovies(Type.CARTOON),
-        onMovieClicked = { onMovieClicked(it) }
+        label = Type.MOST_DOWNLOADED.toName,
+        projects = getProjects(Type.MOST_DOWNLOADED),
+        onProjectClicked = { onProjectClicked(it) }
     )
 }
 
