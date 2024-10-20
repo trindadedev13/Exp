@@ -1,4 +1,4 @@
-package dev.trindadedev.exp.navigation
+package dev.trindadedev.exp.navigation.navtype
 
 import android.net.Uri
 import android.os.Bundle
