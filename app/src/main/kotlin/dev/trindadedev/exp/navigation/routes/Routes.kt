@@ -6,4 +6,4 @@ import kotlinx.serialization.Serializable
 
 @Serializable object HomeRoute
 
-@Serializable data class ProjectDetailsRoute(val route: Project)
+@Serializable data class ProjectDetailsRoute(val project: Project)
