@@ -1,33 +1,33 @@
 package dev.trindadedev.exp.ui.animations.navigation
 
-import soup.compose.material.motion.animation.materialSharedAxisZIn
-import soup.compose.material.motion.animation.materialSharedAxisZOut
+import soup.compose.material.motion.animation.materialSharedAxisXIn
+import soup.compose.material.motion.animation.materialSharedAxisXOut
 
 object NavigationAnimationTransitions {
 
     val enterTransition =
-        materialSharedAxisZIn(
+        materialSharedAxisXIn(
             forward = true,
             slideDistance = NavigationAnimationValues.SlideDistance,
             durationMillis = NavigationAnimationValues.SlideDuration,
         )
 
     val exitTransition =
-        materialSharedAxisZOut(
+        materialSharedAxisXOut(
             forward = true,
             slideDistance = NavigationAnimationValues.SlideDistance,
             durationMillis = NavigationAnimationValues.SlideDuration,
         )
 
     val popEnterTransition =
-        materialSharedAxisZIn(
+        materialSharedAxisXIn(
             forward = false,
             slideDistance = NavigationAnimationValues.SlideDistance,
             durationMillis = NavigationAnimationValues.SlideDuration,
         )
 
     val popExitTransition =
-        materialSharedAxisZOut(
+        materialSharedAxisXOut(
             forward = false,
             slideDistance = NavigationAnimationValues.SlideDistance,
             durationMillis = NavigationAnimationValues.SlideDuration,
