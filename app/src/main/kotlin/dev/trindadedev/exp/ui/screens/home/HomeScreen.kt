@@ -44,7 +44,9 @@ fun HomeScreen(
                 .padding(innerPadding)
                 .verticalScroll(scrollState)
         ) {
-            Sections { onProjectClicked(it) }
+            Sections {
+                onProjectClicked(it) 
+            }
         }
     }
 }
@@ -55,27 +57,25 @@ private fun Sections(
 ) {
     val apiViewModel = koinViewModel<ApiViewModel>()
     
-    val projects by apiViewModel.projects.collectAsState(initial = emptyList())
-    LaunchedEffect(projects) {
-        Log.d("HomeScreen:Sections", projects.toString())
-    }
+    val editorChoiceProjects by apiViewModel.editorChoiceProjects.collectAsState(initial = emptyList())
+    val mostDownloadedProjects by apiViewModel.mostDownloadedProjects.collectAsState(initial = emptyList())
+    val recentProjects by apiViewModel.recentProjects.collectAsState(initial = emptyList())
+    
     Section(
-        label = Type.EDITORS_CHOICE.toName, 
-        projects = projects,
-        onProjectClicked = { onProjectClicked(it) }
-    )
-
-    /* 
-    Section(
-        label = Type.RECENT.toName,
-        projects = getProjects(Type.RECENT),
+        label = Type.EDITOR_CHOICE.label, 
+        projects = editorChoiceProjects,
         onProjectClicked = { onProjectClicked(it) }
     )
     
     Section(
-        label = Type.MOST_DOWNLOADED.toName,
-        projects = getProjects(Type.MOST_DOWNLOADED),
+        label = Type.MOST_DOWNLOADED.label,
+        projects = mostDownloadedProjects,
         onProjectClicked = { onProjectClicked(it) }
-    ) 
-    */
+    )
+
+    Section(
+        label = Type.RECENT.label,
+        projects = recentProjects,
+        onProjectClicked = { onProjectClicked(it) }
+    )
 }

@@ -2,9 +2,11 @@ package dev.trindadedev.exp.api.repo
 
 import android.util.Log
 
+import dev.trindadedev.exp.api.Type
 import dev.trindadedev.exp.api.models.Project
 import dev.trindadedev.exp.api.models.ApiResponse
 import dev.trindadedev.exp.api.Consts.URL
+import dev.trindadedev.exp.api.Consts.Tokens.API_KEY
 import dev.trindadedev.exp.api.Consts.Routes.PROJECTS_ROUTE
 
 import io.ktor.client.*
@@ -21,11 +23,16 @@ import kotlinx.serialization.json.Json
 class ProjectsRepository(
     private val httpClient: HttpClient
 ) {
-    suspend fun getProjects(apiKey: String): List<Project> {
+    suspend fun getProjects(
+        type: Type
+    ): List<Project> {
         val response: HttpResponse = httpClient.submitForm(
             url = "$URL$PROJECTS_ROUTE",
             formParameters = parameters {
-                append("api_key", apiKey)
+                append("api_key", API_KEY)
+                if (type.id != null) {
+                    append("scope", type.id)
+                }
             }
         )
         
