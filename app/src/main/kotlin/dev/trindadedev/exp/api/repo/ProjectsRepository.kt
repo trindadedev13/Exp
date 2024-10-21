@@ -22,17 +22,13 @@ class ProjectsRepository(
 ) {
     suspend fun getProjects(apiKey: String): List<Project> {
         val response: HttpResponse = httpClient.submitForm(
-            url = "$URL$PROJECTS_ROUTE"
+            url = "$URL$PROJECTS_ROUTE",
             formParameters = parameters {
                 append("api_key", apiKey)
             }
         )
-            url {
-                
-            } 
-          }
         
-        Log.d("ProjectsRepository", response.body())
+        Log.d("ProjectsRepository::getProjectsL31", response.body())
         val json = Json { ignoreUnknownKeys = true }
         
         if (response.status.value in 200..299) {
