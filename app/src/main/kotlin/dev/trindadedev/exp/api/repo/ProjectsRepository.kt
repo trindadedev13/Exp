@@ -3,6 +3,7 @@ package dev.trindadedev.exp.api.repo
 import android.util.Log
 
 import dev.trindadedev.exp.api.models.Project
+import dev.trindadedev.exp.api.models.ApiResponse
 import dev.trindadedev.exp.api.Consts.URL
 import dev.trindadedev.exp.api.Consts.Routes.PROJECTS_ROUTE
 
@@ -33,7 +34,10 @@ class ProjectsRepository(
         
         if (response.status.value in 200..299) {
             val responseBody: String = response.body()
-            return json.decodeFromString(responseBody)
+            
+            val apiResponse: ApiResponse = json.decodeFromString(responseBody)
+            
+            return apiResponse.projects
         } else {
             throw Exception("error lol: ${response.status}")
         }
