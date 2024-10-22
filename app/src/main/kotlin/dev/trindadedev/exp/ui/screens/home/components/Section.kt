@@ -33,7 +33,9 @@ fun Section(
         ) {
             ProjectsList(
                 projects = projects,
-                onProjectClicked = { onProjectClicked(it) }
+                onProjectClicked = {
+                    onProjectClicked(it)
+                }
             )
         }
     }
@@ -45,38 +47,100 @@ private fun ProjectsList(
     onProjectClicked: (Project) -> Unit
 ) {
     projects.forEach { project ->
-        ElevatedCard(
-            Modifier
-                .width(100.dp)
-                .padding(8.dp)
-                .clip(RoundedCornerShape(12.dp))
-                .clickable { onProjectClicked(project) }
+        ProjectItem(
+            project= project,
+            onProjectClicked = {
+                onProjectClicked(it)
+            }
+        )
+    }
+}
+
+@Composable
+private fun ProjectItem(
+    project: Project,
+    onProjectClicked: (Project) -> Unit
+) {
+    ElevatedCard(
+        modifier = Modifier
+            .width(100.dp)
+            .padding(end = 8.dp)
+            .clickable {
+                onProjectClicked(project)
+            },
+        shape = RoundedCornerShape(10.dp),
+        elevation = CardDefaults.cardElevation(
+            defaultElevation = 4.dp
+        )
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 8.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Column {
-                AsyncImage(
-                    model = project.icon,
-                    contentDescription = "Project Image",
-                    contentScale = ContentScale.Crop,
-                    modifier = Modifier
-                        .clip(RoundedCornerShape(20.dp))
-                        .fillMaxWidth()
-                        .height(100.dp)
-                )
-                Spacer(modifier = Modifier.height(4.dp))
-                Text(
-                    text = project.title,
-                    style = MaterialTheme.typography.titleMedium,
-                    overflow = TextOverflow.Ellipsis,
-                    maxLines = 1,
-                    modifier = Modifier.padding(start = 2.dp, end = 2.dp)
-                )
-                Text(
-                    text = project.description,
-                    style = MaterialTheme.typography.bodyMedium,
-                    overflow = TextOverflow.Ellipsis,
-                    maxLines = 2,
-                    modifier = Modifier.padding(start = 2.dp, end = 2.dp)
-                )
+            AsyncImage(
+                model = project.icon,
+                contentDescription = "Project Image",
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(100.dp)
+                    .clip(RoundedCornerShape(0.dp))
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+
+            Text(
+                text = project.title,
+                style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
+                overflow = TextOverflow.Ellipsis,
+                maxLines = 1,
+                modifier = Modifier.padding(horizontal = 8.dp)
+            )
+            Spacer(modifier = Modifier.height(4.dp))
+
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 8.dp, vertical = 10.dp)
+            ) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Icon(
+                        painter = painterResource(id = R.drawable.ic_download_24),
+                        contentDescription = "Downloads",
+                        modifier = Modifier.size(15.dp)
+                    )
+                    Spacer(modifier = Modifier.width(4.dp))
+                    Text(
+                        text = project.downloads.toString(),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+
+                Spacer(modifier = Modifier.height(6.dp))
+
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Icon(
+                        painter = painterResource(id = R.drawable.heart_empty_white_outline_96),
+                        contentDescription = "Likes",
+                        modifier = Modifier
+                            .size(15.dp)
+                            .tint(MaterialTheme.colorScheme.onSurfaceVariant)
+                    )
+                    Spacer(modifier = Modifier.width(4.dp))
+                    Text(
+                        text = project.likes.toString(),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
             }
         }
     }
