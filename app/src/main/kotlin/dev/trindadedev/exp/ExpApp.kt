@@ -18,7 +18,6 @@ class ExpApp : Application() {
 
     fun configureKoin() {
         startKoin {
-            //androidLogger()
             androidContext(this@ExpApp)
             modules(moduleApp, moduleNetwork)
         }
