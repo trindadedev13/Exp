@@ -66,7 +66,7 @@ private fun ProjectItem(
     project: Project,
     onProjectClicked: (Project) -> Unit
 ) {
-    Card(
+    OutlinedCard(
         modifier = Modifier
             .width(130.dp)
             .padding(
