@@ -66,22 +66,21 @@ private fun ProjectItem(
     project: Project,
     onProjectClicked: (Project) -> Unit
 ) {
-    ElevatedCard(
+    Card(
         modifier = Modifier
             .width(100.dp)
-            .padding(end = 8.dp)
+            .padding(
+                end = 8.dp,
+                start = 8.dp
+            )
             .clickable {
                 onProjectClicked(project)
             },
-        shape = RoundedCornerShape(10.dp),
-        elevation = CardDefaults.cardElevation(
-            defaultElevation = 4.dp
-        )
+        shape = RoundedCornerShape(10.dp)
     ) {
         Column(
             modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = 8.dp),
+                .fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             AsyncImage(
