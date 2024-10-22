@@ -14,6 +14,7 @@ import androidx.compose.ui.draw.*
 import androidx.compose.ui.layout.*
 import androidx.compose.ui.text.font.*
 import androidx.compose.ui.text.style.*
+import androidx.compose.ui.graphics.*
 
 import coil3.compose.AsyncImage
 
@@ -134,9 +135,9 @@ private fun ProjectItem(
                     Icon(
                         imageVector = Icons.Filled.Favorite,
                         contentDescription = "Likes",
+                        colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onSurfaceVariant)
                         modifier = Modifier
                             .size(15.dp)
-                            .tint(MaterialTheme.colorScheme.onSurfaceVariant)
                     )
                     Spacer(modifier = Modifier.width(4.dp))
                     Text(
