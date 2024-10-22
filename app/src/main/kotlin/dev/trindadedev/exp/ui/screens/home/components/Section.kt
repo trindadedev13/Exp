@@ -68,7 +68,7 @@ private fun ProjectItem(
 ) {
     Card(
         modifier = Modifier
-            .width(100.dp)
+            .width(130.dp)
             .padding(
                 end = 8.dp,
                 start = 8.dp
@@ -92,6 +92,7 @@ private fun ProjectItem(
                     .height(100.dp)
                     .clip(RoundedCornerShape(0.dp))
             )
+            
             Spacer(modifier = Modifier.height(8.dp))
 
             Text(
