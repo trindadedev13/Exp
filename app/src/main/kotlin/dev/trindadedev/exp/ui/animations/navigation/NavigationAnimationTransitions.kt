@@ -3,6 +3,9 @@ package dev.trindadedev.exp.ui.animations.navigation
 import soup.compose.material.motion.animation.materialSharedAxisYIn
 import soup.compose.material.motion.animation.materialSharedAxisYOut
 
+/*
+* object that return needed transitions of Navigation anims
+*/
 object NavigationAnimationTransitions {
 
     val enterTransition =

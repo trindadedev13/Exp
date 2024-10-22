@@ -1,5 +1,8 @@
 package dev.trindadedev.exp.api
 
+/*
+* projects types
+*/
 enum class Type(
     val label: String,
     val id: String?

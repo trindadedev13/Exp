@@ -20,6 +20,14 @@ import coil3.compose.AsyncImage
 
 import dev.trindadedev.exp.api.models.Project
 
+
+/*
+* A Column with projects list for home or something
+* @param label title of section
+* @param projects list of projects 
+* @param onProjectClicked function called when user click in project 
+* see @Composable ProjectsList
+*/
 @Composable
 fun Section(
     label: String,
@@ -46,6 +54,12 @@ fun Section(
     }
 }
 
+/*
+* A Simple Horizontal List of Projects 
+* @param projects list of projects
+* @param onProjectClicked function called when user click in project  
+* used on @Composable Section
+*/
 @Composable
 private fun ProjectsList(
     projects: List<Project>,
@@ -61,6 +75,12 @@ private fun ProjectsList(
     }
 }
 
+
+/*
+* A Item Layout of Project
+* @param project A data class of current project 
+* @param onProjectClicked function called when user click in project 
+*/
 @Composable
 private fun ProjectItem(
     project: Project,

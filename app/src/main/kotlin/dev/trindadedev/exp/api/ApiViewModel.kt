@@ -10,14 +10,20 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
+/*
+* View model used for manage Api projects  etc
+*/
+
 class ApiViewModel(
     private val repo: ProjectsRepository
 ) : ViewModel() {
 
+    // private lists of projects 
     private val _editorChoiceProjects = MutableStateFlow<List<Project>>(emptyList())
     private val _mostDownloadedProjects = MutableStateFlow<List<Project>>(emptyList())
     private val _recentProjects = MutableStateFlow<List<Project>>(emptyList())
     
+    // lists with projects by type 
     val editorChoiceProjects: StateFlow<List<Project>>
         get() = _editorChoiceProjects
         
@@ -27,7 +33,6 @@ class ApiViewModel(
     val recentProjects: StateFlow<List<Project>>
         get() = _recentProjects
     
-
     private val _error = MutableStateFlow<String?>(null)
     val error: StateFlow<String?>
         get() = _error
@@ -38,7 +43,10 @@ class ApiViewModel(
         getRecentProjects()
     }
     
-    fun getEditorChoiceProjects() {
+    /*
+    * use ProjectsRepo to get Editor Choice Projects
+    */
+    private fun getEditorChoiceProjects() {
         viewModelScope.launch {
             try {
                 _editorChoiceProjects.value = repo.getProjects(Type.EDITOR_CHOICE)
@@ -48,7 +56,10 @@ class ApiViewModel(
         }
     }
     
-    fun getMostDownloadedProjects() {
+    /*
+    * use ProjectsRepo to get Most Downloaded Projects
+    */
+    private fun getMostDownloadedProjects() {
         viewModelScope.launch {
             try {
                 _mostDownloadedProjects.value = repo.getProjects(Type.MOST_DOWNLOADED)
@@ -58,7 +69,10 @@ class ApiViewModel(
         }
     }
     
-    fun getRecentProjects() {
+    /*
+    * use ProjectsRepo to get Recents Projects
+    */
+    private fun getRecentProjects() {
         viewModelScope.launch {
             try {
                 _recentProjects.value = repo.getProjects(Type.RECENT)

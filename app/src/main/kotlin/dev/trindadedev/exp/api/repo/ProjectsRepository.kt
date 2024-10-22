@@ -23,6 +23,11 @@ import kotlinx.serialization.json.Json
 class ProjectsRepository(
     private val httpClient: HttpClient
 ) {
+    
+    /*
+    * Method to get projects from api with KTOR
+    * @param type Type of projects
+    */
     suspend fun getProjects(
         type: Type
     ): List<Project> {

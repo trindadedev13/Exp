@@ -51,6 +51,10 @@ fun HomeScreen(
     }
 }
 
+/*
+* All sections on Home
+* @param onProjectClicked function called when user click in project 
+*/
 @Composable
 private fun Sections(
     onProjectClicked: (Project) -> Unit

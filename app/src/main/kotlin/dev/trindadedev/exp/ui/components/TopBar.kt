@@ -4,6 +4,9 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.foundation.layout.RowScope
 
+/*
+* A Basic small TopAppBar
+*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TopBar(

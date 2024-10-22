@@ -14,11 +14,17 @@ import org.koin.androidx.viewmodel.dsl.viewModelOf
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 
+/*
+* apo module
+*/
 val moduleApp = module {
     singleOf(::ProjectsRepository)
     viewModelOf(::ApiViewModel)
 }
 
+/*
+* Module for ktor repo dependency injection
+*/
 val moduleNetwork = module {
     single {
         HttpClient(Android) {

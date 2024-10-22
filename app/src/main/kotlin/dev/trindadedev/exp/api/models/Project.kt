@@ -2,6 +2,9 @@ package dev.trindadedev.exp.api.models
 
 import kotlinx.serialization.Serializable
 
+/*
+* Model class used to manage project data
+*/
 @Serializable
 data class Project(
     val id: String,

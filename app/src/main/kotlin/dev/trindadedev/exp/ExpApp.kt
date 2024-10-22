@@ -15,7 +15,10 @@ class ExpApp : Application() {
         super.onCreate()
         configureKoin()
     }
-
+    
+    /*
+    * Start koin for dependency injection
+    */
     fun configureKoin() {
         startKoin {
             androidContext(this@ExpApp)
