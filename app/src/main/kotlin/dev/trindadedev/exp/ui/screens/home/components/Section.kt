@@ -135,7 +135,7 @@ private fun ProjectItem(
                     Icon(
                         imageVector = Icons.Filled.Favorite,
                         contentDescription = "Likes",
-                        colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onSurfaceVariant),
+                        tint = MaterialTheme.colorScheme.onSurfaceVariant,
                         modifier = Modifier
                             .size(15.dp)
                     )
