@@ -45,37 +45,39 @@ private fun ProjectsList(
     onProjectClicked: (Project) -> Unit
 ) {
     projects.forEach { project ->
-        Column(
+        ElevatedCard(
             Modifier
-                .width(140.dp)
+                .width(100.dp)
                 .padding(8.dp)
                 .clip(RoundedCornerShape(12.dp))
                 .clickable { onProjectClicked(project) }
         ) {
-            AsyncImage(
-                model = project.icon,
-                contentDescription = "Project Image",
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .clip(RoundedCornerShape(20.dp))
-                    .fillMaxWidth()
-                    .height(200.dp)
-            )
-            Spacer(modifier = Modifier.height(4.dp))
-            Text(
-                text = project.title,
-                style = MaterialTheme.typography.titleMedium,
-                overflow = TextOverflow.Ellipsis,
-                maxLines = 1,
-                modifier = Modifier.padding(start = 2.dp, end = 2.dp)
-            )
-            Text(
-                text = project.description,
-                style = MaterialTheme.typography.bodyMedium,
-                overflow = TextOverflow.Ellipsis,
-                maxLines = 2,
-                modifier = Modifier.padding(start = 2.dp, end = 2.dp)
-            )
+            Column {
+                AsyncImage(
+                    model = project.icon,
+                    contentDescription = "Project Image",
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(20.dp))
+                        .fillMaxWidth()
+                        .height(100.dp)
+                )
+                Spacer(modifier = Modifier.height(4.dp))
+                Text(
+                    text = project.title,
+                    style = MaterialTheme.typography.titleMedium,
+                    overflow = TextOverflow.Ellipsis,
+                    maxLines = 1,
+                    modifier = Modifier.padding(start = 2.dp, end = 2.dp)
+                )
+                Text(
+                    text = project.description,
+                    style = MaterialTheme.typography.bodyMedium,
+                    overflow = TextOverflow.Ellipsis,
+                    maxLines = 2,
+                    modifier = Modifier.padding(start = 2.dp, end = 2.dp)
+                )
+            }
         }
     }
 }
