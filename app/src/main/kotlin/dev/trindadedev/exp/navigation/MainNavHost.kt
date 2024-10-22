@@ -1,5 +1,7 @@
 package dev.trindadedev.exp.navigation
 
+import android.util.Log
+
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -39,7 +41,8 @@ fun MainNavHost() {
         composable<HomeRoute> {
             HomeScreen(
                 onProjectClicked = { project ->
-                    navController.navigate(ProjectDetailsRoute(project))
+                    navController.navigate(ProjectDetailsRoute(project = project))
+                    Log.d("Project", project.toString())
                 }
             )
         }
