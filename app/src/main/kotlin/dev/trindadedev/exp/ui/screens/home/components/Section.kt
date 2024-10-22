@@ -100,8 +100,7 @@ private fun ProjectItem(
     ) {
         Column(
             modifier = Modifier
-                .fillMaxWidth(),
-            horizontalAlignment = Alignment.CenterHorizontally
+                .fillMaxWidth()
         ) {
             AsyncImage(
                 model = project.icon,
