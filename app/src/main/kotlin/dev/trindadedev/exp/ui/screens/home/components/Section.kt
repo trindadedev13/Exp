@@ -3,12 +3,16 @@ package dev.trindadedev.exp.ui.screens.home.components
 import androidx.compose.foundation.*
 import androidx.compose.foundation.shape.*
 import androidx.compose.foundation.layout.*
+import androidx.compose.icons.*
+import androidx.compose.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.*
+import androidx.compose.ui.res.*
 import androidx.compose.ui.unit.*
 import androidx.compose.ui.draw.*
 import androidx.compose.ui.layout.*
+import androidx.compose.ui.text.font.*
 import androidx.compose.ui.text.style.*
 
 import coil3.compose.AsyncImage
@@ -109,7 +113,7 @@ private fun ProjectItem(
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Icon(
-                        painter = painterResource(id = R.drawable.ic_download_24),
+                        imageVector = Icons.Filled.CloudDownload,
                         contentDescription = "Downloads",
                         modifier = Modifier.size(15.dp)
                     )
@@ -128,7 +132,7 @@ private fun ProjectItem(
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Icon(
-                        painter = painterResource(id = R.drawable.heart_empty_white_outline_96),
+                        imageVector = Icons.Filled.Favorite,
                         contentDescription = "Likes",
                         modifier = Modifier
                             .size(15.dp)
