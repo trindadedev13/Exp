@@ -122,7 +122,7 @@ private fun ProjectItem(
                 modifier = Modifier
                     .height(60.dp)
                     .width(60.dp)
-                    .clip(RoundedCornerShape(0.dp))
+                    .clip(RoundedCornerShape(15.dp))
             )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
