@@ -89,21 +89,15 @@ private fun ProjectItem(
     OutlinedCard(
         modifier = Modifier
             .width(300.dp)
-            .padding(
-                end = 8.dp,
-                start = 8.dp
-            )
-            .clickable {
-                onProjectClicked(project)
-            },
+            .padding(8.dp)
+            .clickable { onProjectClicked(project) },
         shape = RoundedCornerShape(10.dp),
         colors = CardDefaults.outlinedCardColors(
             containerColor = MaterialTheme.colorScheme.surfaceContainer
         ),
     ) {
         Box(
-            modifier = Modifier
-                .fillMaxWidth()
+            modifier = Modifier.fillMaxWidth()
         ) {
             AsyncImage(
                 model = project.screenshot1,
@@ -112,14 +106,14 @@ private fun ProjectItem(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(180.dp)
-                    .clip(RoundedCornerShape(0.dp))
             )
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .fillMaxHeight(),
+                    .padding(bottom = 8.dp), 
                 verticalArrangement = Arrangement.Bottom
             ) {
+                // Ícone do projeto
                 AsyncImage(
                     model = project.icon,
                     contentDescription = "Project Icon",
@@ -128,8 +122,10 @@ private fun ProjectItem(
                         .height(60.dp)
                         .width(60.dp)
                         .clip(RoundedCornerShape(10.dp))
+                        .align(Alignment.CenterHorizontally)
                 )
                 Spacer(modifier = Modifier.height(8.dp))
+                
                 Text(
                     text = project.title,
                     style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
@@ -137,11 +133,13 @@ private fun ProjectItem(
                     maxLines = 1,
                     modifier = Modifier.padding(horizontal = 8.dp)
                 )
+                
                 Spacer(modifier = Modifier.height(4.dp))
+                
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 8.dp, vertical = 10.dp)
+                        .padding(horizontal = 8.dp, vertical = 4.dp)
                 ) {
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
@@ -151,8 +149,7 @@ private fun ProjectItem(
                             imageVector = Icons.Filled.Favorite,
                             contentDescription = "Likes",
                             tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                            modifier = Modifier
-                                .size(15.dp)
+                            modifier = Modifier.size(15.dp)
                         )
                         Spacer(modifier = Modifier.width(4.dp))
                         Text(
@@ -161,7 +158,9 @@ private fun ProjectItem(
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
                     }
+                    
                     Spacer(modifier = Modifier.height(6.dp))
+                    
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
                         modifier = Modifier.fillMaxWidth()
