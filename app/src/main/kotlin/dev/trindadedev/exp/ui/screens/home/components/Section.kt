@@ -96,7 +96,10 @@ private fun ProjectItem(
             .clickable {
                 onProjectClicked(project)
             },
-        shape = RoundedCornerShape(10.dp)
+        shape = RoundedCornerShape(10.dp),
+        colors = CardDefaults.outlinedCardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceContainer
+        ),
     ) {
         Column(
             modifier = Modifier
