@@ -115,7 +115,8 @@ private fun ProjectItem(
                     .clip(RoundedCornerShape(0.dp))
             )
             Column(
-                modifier = Modifier.fillMaxSize()
+                modifier = Modifier.fillMaxSize(),
+                verticalArrangement = Arrangement.Bottom
             ) {
                 AsyncImage(
                     model = project.icon,
