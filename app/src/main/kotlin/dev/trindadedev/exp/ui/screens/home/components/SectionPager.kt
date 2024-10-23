@@ -106,8 +106,8 @@ private fun ProjectItem(
                 .fillMaxWidth()
         ) {
             AsyncImage(
-                model = project.icon,
-                contentDescription = "Project Image",
+                model = project.screenshot1,
+                contentDescription = "Project Screenshot 1",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .fillMaxWidth()
