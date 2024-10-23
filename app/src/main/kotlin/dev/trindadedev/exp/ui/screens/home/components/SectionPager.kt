@@ -114,6 +114,17 @@ private fun ProjectItem(
                     .height(180.dp)
                     .clip(RoundedCornerShape(0.dp))
             )
+            Spacer(modifier = Modifier.height(50.dp))
+            AsyncImage(
+                model = project.icon,
+                contentDescription = "Project Icon",
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(60.dp)
+                    .width(60.dp)
+                    .clip(RoundedCornerShape(0.dp))
+            )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
                 text = project.title,
