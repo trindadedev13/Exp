@@ -120,7 +120,6 @@ private fun ProjectItem(
                 contentDescription = "Project Icon",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .fillMaxWidth()
                     .height(60.dp)
                     .width(60.dp)
                     .clip(RoundedCornerShape(0.dp))
