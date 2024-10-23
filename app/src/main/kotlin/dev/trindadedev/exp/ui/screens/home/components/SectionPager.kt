@@ -114,64 +114,67 @@ private fun ProjectItem(
                     .height(180.dp)
                     .clip(RoundedCornerShape(0.dp))
             )
-            Spacer(modifier = Modifier.height(50.dp))
-            AsyncImage(
-                model = project.icon,
-                contentDescription = "Project Icon",
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .height(60.dp)
-                    .width(60.dp)
-                    .clip(RoundedCornerShape(15.dp))
-            )
-            Spacer(modifier = Modifier.height(8.dp))
-            Text(
-                text = project.title,
-                style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-                overflow = TextOverflow.Ellipsis,
-                maxLines = 1,
-                modifier = Modifier.padding(horizontal = 8.dp)
-            )
-            Spacer(modifier = Modifier.height(4.dp))
             Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 8.dp, vertical = 10.dp)
+                modifier = Modifier.fillMaxSize()
             ) {
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier.fillMaxWidth()
+                AsyncImage(
+                    model = project.icon,
+                    contentDescription = "Project Icon",
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier
+                        .height(60.dp)
+                        .width(60.dp)
+                        .clip(RoundedCornerShape(10.dp))
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = project.title,
+                    style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
+                    overflow = TextOverflow.Ellipsis,
+                    maxLines = 1,
+                    modifier = Modifier.padding(horizontal = 8.dp)
+                )
+                Spacer(modifier = Modifier.height(4.dp))
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 8.dp, vertical = 10.dp)
                 ) {
-                    Icon(
-                        imageVector = Icons.Filled.Favorite,
-                        contentDescription = "Likes",
-                        tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                        modifier = Modifier
-                            .size(15.dp)
-                    )
-                    Spacer(modifier = Modifier.width(4.dp))
-                    Text(
-                        text = project.likes.toString(),
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                }
-                Spacer(modifier = Modifier.height(6.dp))
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    Icon(
-                        imageVector = Icons.Filled.CloudDownload,
-                        contentDescription = "Downloads",
-                        modifier = Modifier.size(15.dp)
-                    )
-                    Spacer(modifier = Modifier.width(4.dp))
-                    Text(
-                        text = project.downloads.toString(),
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Icon(
+                            imageVector = Icons.Filled.Favorite,
+                            contentDescription = "Likes",
+                            tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier
+                                .size(15.dp)
+                        )
+                        Spacer(modifier = Modifier.width(4.dp))
+                        Text(
+                            text = project.likes.toString(),
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                    Spacer(modifier = Modifier.height(6.dp))
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Icon(
+                            imageVector = Icons.Filled.CloudDownload,
+                            contentDescription = "Downloads",
+                            modifier = Modifier.size(15.dp)
+                        )
+                        Spacer(modifier = Modifier.width(4.dp))
+                        Text(
+                            text = project.downloads.toString(),
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
                 }
             }
         }
