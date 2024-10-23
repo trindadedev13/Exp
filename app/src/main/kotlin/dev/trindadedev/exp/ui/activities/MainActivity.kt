@@ -15,7 +15,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.compose.ui.Modifier
 
 import dev.trindadedev.exp.navigation.MainNavHost
-import dev.trindadedev.exp.ui.theme.MoviesAppTheme
+import dev.trindadedev.exp.ui.theme.ExpTheme
 import dev.trindadedev.exp.platform.LocalMainNavController
 
 class MainActivity : ComponentActivity() {
@@ -24,7 +24,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         setContent {
-            MoviesAppTheme {
+            ExpTheme {
                 Surface(
                      modifier = Modifier.fillMaxSize(),
                      color = MaterialTheme.colorScheme.background

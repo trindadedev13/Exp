@@ -115,7 +115,9 @@ private fun ProjectItem(
                     .clip(RoundedCornerShape(0.dp))
             )
             Column(
-                modifier = Modifier.fillMaxSize(),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .fillMaxHeight(),
                 verticalArrangement = Arrangement.Bottom
             ) {
                 AsyncImage(

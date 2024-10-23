@@ -17,7 +17,7 @@ import androidx.core.view.WindowCompat
 import androidx.compose.ui.graphics.Color
 
 @Composable
-fun MoviesAppTheme(
+fun ExpTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     highContrastDarkTheme: Boolean = false,
     dynamicColor: Boolean = true,
