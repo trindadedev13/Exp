@@ -18,6 +18,7 @@ import dev.trindadedev.exp.api.ApiViewModel
 import dev.trindadedev.exp.api.Type
 import dev.trindadedev.exp.api.models.Project
 import dev.trindadedev.exp.ui.screens.home.components.Section
+import dev.trindadedev.exp.ui.screens.home.components.SectionPager
 import dev.trindadedev.exp.ui.components.TopBar
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -65,7 +66,7 @@ private fun Sections(
     val mostDownloadedProjects by apiViewModel.mostDownloadedProjects.collectAsState(initial = emptyList())
     val recentProjects by apiViewModel.recentProjects.collectAsState(initial = emptyList())
     
-    Section(
+    SectionPager(
         label = Type.EDITOR_CHOICE.label, 
         projects = editorChoiceProjects,
         onProjectClicked = { onProjectClicked(it) }
